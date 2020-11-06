@@ -1,2 +1,7 @@
 # fintest
-金融数据集合（不删减，增量更新，用于测试指标)
+finanical dataset for algorithm test
+(incremental updating mode)
+
+# structure
+	* dataset:  specific data
+	* api: api for local dataset
