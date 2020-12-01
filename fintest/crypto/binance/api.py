@@ -1,4 +1,3 @@
-import os
 import arrow
 import sqlite3
 from fintest.crypto.binance.config import BN_BTCUSDT_2020_SQLITE3

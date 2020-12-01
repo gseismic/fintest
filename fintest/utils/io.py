@@ -1,3 +1,4 @@
+import os
 try:
     import lzma
 except ImportError:
@@ -12,7 +13,7 @@ def ensure_xzfile_decompressed(filename):
     xz_filename = filename + '.xz'
     print(f'** INFO: Dataset not decompressed, look for {xz_filename}...')
     if not os.path.exists(xz_filename):
-        raise Exception(f'xz {xz_filname} not exists')
+        raise Exception(f'xz {xz_filename} not exists')
 
     print(f'** INFO: decompressing {xz_filename}...')
     text = lzma.open(xz_filename).read()
