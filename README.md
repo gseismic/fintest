@@ -8,7 +8,7 @@ finanical dataset for algorithm test
 
 # API
 ```
-fintest.crypto.binance.get_future_klines
+fintest.crypto.binance.get_future_klines [data range: 2020-11-01 ~ 2020-12-01]
 ```
 
 # Usage
