@@ -14,11 +14,13 @@ def to_unixepoch(any_dt, to_ms=False, to_int=True):
     return rv
 
 
-def get_future_klines(symbol, start_dt, end_dt):
+def get_future_klines(symbol, interval, start_dt, end_dt):
+    if interval != '1m':
+        raise Exception(f'Unsupported parameter value `interval`{interval}')
+
     _start_dt = to_unixepoch(start_dt, to_ms=True)
     _end_dt = to_unixepoch(end_dt, to_ms=True)
     _symbol = symbol.upper()
-
     ensure_xzfile_decompressed(BN_BTCUSDT_2020_SQLITE3)
     conn = sqlite3.connect(BN_BTCUSDT_2020_SQLITE3)
     try:
