@@ -45,7 +45,25 @@ def get_future_klines(symbol, interval, start_dt, end_dt):
     return data
 
 
-def load_():
+def load_bnkline_demo():
+    dbfile = BN_BTCUSDT_2020_SQLITE3
+    ensure_xzfile_decompressed(dbfile)
+    conn = sqlite3.connect(dbfile)
+    conn.row_factory = sqlite3.Row
+    try:
+        cu = conn.cursor()
+        try:
+            query_sql = '''SELECT * FROM TBCUSDT_1m'''
+            cu.execute(query_sql)
+            data = [dict(r) for r in cu.fetchall()]
+        finally:
+            cu.close()
+    finally:
+        conn.close()
+    return data
+
+
+def load_bntrade_demo():
     dbfile = BN_BTCUSDT_20201209_0_TRADES_SQLITE3
     ensure_xzfile_decompressed(dbfile)
     conn = sqlite3.connect(dbfile)
@@ -53,9 +71,7 @@ def load_():
     try:
         cu = conn.cursor()
         try:
-            query_sql = f'''SELECT * 
-            FROM TBCUSDT_1m where open_time between
-            {_start_dt} and {_end_dt}'''
+            query_sql = '''SELECT * FROM BTCUSDT'''
             cu.execute(query_sql)
             data = [dict(r) for r in cu.fetchall()]
         finally:
