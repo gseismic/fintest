@@ -12,7 +12,7 @@ def package_files(directory):
 extra_files = package_files('fintest/')
 setup(
     name='fintest', 
-    version='0.1.0', 
+    version='0.1.1', 
     packages=find_packages(),
     description='finanical dataset for algorithm test',
     install_requires = ['arrow'],

@@ -79,3 +79,11 @@ def load_bntrade_demo():
     finally:
         conn.close()
     return data
+
+
+def get_future_trades_demo1():
+    return load_bntrade_demo()
+
+
+def get_future_klines_demo1():
+    return load_bnkline_demo()

@@ -13,8 +13,15 @@ def test_get_future_klines():
 
 
 def test_future_trades001():
-    data = api.load_bntrade_demo()
-    print(data, len(data))
+    data = api.get_future_trades_demo1()
+    # print(data, len(data))
+    print(len(data))
+
+
+def test_future_klines001():
+    data = api.get_future_klines_demo1()
+    # print(data, len(data))
+    print(len(data))
 
 
 if __name__ == '__main__':
@@ -22,3 +29,5 @@ if __name__ == '__main__':
         test_get_future_klines()
     if 1:
         test_future_trades001()
+    if 1:
+        test_future_klines001()
